@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_sub
+    - node.type.menu_food
+  module:
+    - text
+id: node.menu_food.field_menu_sub
+field_name: field_menu_sub
+entity_type: node
+bundle: menu_food
+label: 'Menu sub'
+description: 'Sample: Vagetable, Tomato, Cherry, Chilli, Milk, Potato, Checken, Sesame, Juice Fruit'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

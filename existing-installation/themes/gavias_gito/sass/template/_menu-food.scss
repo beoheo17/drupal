@@ -1,0 +1,276 @@
+.menu-food-block{
+   &.teaser-1{
+      .block-content{
+         @include clearfix();
+         margin-bottom: 36px;
+         .title{
+            font-size: 20px;
+            line-height: 26px;
+            font-family: $font-second;
+            color: $black;
+            font-weight: 600;
+         }
+         .image{
+            width: 115px;
+            float: left;
+            position: relative;
+            .contact-link-inner{
+               position: absolute;
+               bottom: 30px;
+               left: -30px;
+               z-index: 9;
+               @include opacity(0);
+               @include transition(all 0.35s);
+               @media(max-width: $screen-sm-max){
+                  @include opacity(1);
+                  left: 0;
+               }
+               a.contact-link{
+                  background: $white;
+                  color: $black;
+                  @include box-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+                  @include border-radius(0px 5px 5px 0);
+                  display: inline-block;
+                  padding: 2px 6px;
+                  &:hover{
+                     background: $theme-color;
+                     color: $white;
+                  }
+               }
+            }
+         }
+         .content-inner{
+            padding-left: 135px;
+            margin-top: -5px;
+         }
+      }
+      .sub-menu-food{
+         @include clearfix();
+         font-size: 14px;
+         margin-top: 10px;
+         float: left;
+         width: 100%;
+      }
+   }
+   &.teaser-2{
+      margin-bottom: 25px;
+      &:hover{
+         .image{
+            .contact-link-inner{
+               @include opacity(1);
+               left: 0;
+            }
+         }
+      }
+      .image{
+         position: relative;
+         overflow: hidden;
+         .contact-link-inner{
+            position: absolute;
+            bottom: 30px;
+            left: -30px;
+            z-index: 9;
+            @include opacity(0);
+            @include transition(all 0.35s);
+            @media(max-width: $screen-sm-max){
+               @include opacity(1);
+               left: 0;
+            }
+            a.contact-link{
+               background: $white;
+               color: $black;
+               @include box-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+               @include border-radius(0px 5px 5px 0);
+               display: inline-block;
+               padding: 2px 6px;
+               &:hover{
+                  background: $theme-color;
+                  color: $white;
+               }
+            }
+         }
+      }
+      .content-inner{
+         padding: 15px 0;
+         text-align: left;
+         position: relative;
+         &:after{
+            content: '';
+            background: url('#{$base-theme-image-path}/line.png') repeat-x center bottom $nocolor;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            z-index: 1;
+         }
+         .title{
+            position: relative;
+            padding: 0;
+            font-size: 20px;
+            font-family: $font-second;
+            color: $black;
+            font-weight: 600;
+         }
+         .sub-menu-food{
+            color: #515150; 
+            padding: 2px 0 5px;
+            font-size: 15px;
+            p{
+               margin-bottom: 0;
+            }
+         }
+         .menu-food-price{
+            color: $theme-color;
+            font-family: $font-second;
+            font-size: 18px;
+            font-weight: 600;
+         }
+      }
+   }
+}
+
+.menu-food-1{
+   .views-row{
+      &:last-child{
+         .menu-food-block{
+            .block-content{
+               margin-bottom: 0;
+               padding-bottom: 0;
+               border: none;
+            }
+         }
+      }
+   }
+}
+
+.gsc-special-promotion{
+   position: relative;
+   .ajax-action{
+      a{
+         text-transform: uppercase;
+         color: $black;
+         font-size: 12px;
+         font-weight: 700;
+         font-family: $font-second;
+         @include transition(all 0.35s);
+         i{
+            margin-left: 3px;
+         }
+         &:hover, &:focus{
+            letter-spacing: 1px;
+         }
+      }
+   }
+   &.style-1{
+      .box-content{
+         position: relative;
+         z-index: 9;
+         text-align: center;
+         padding: 20px 0;
+         .sub-title{
+            font-size: 36px;
+            color: $theme-color;
+            font-family: $font-third;
+            line-height: 1;
+            position: relative;
+            bottom: -5px;
+         }
+         .title{
+            font-size: 22px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            color: $black;
+            line-height: 30px;
+         }
+         .desc{
+            padding: 10px 0 0;
+         }
+      }
+   }
+   &.style-2{
+      position: relative;
+      .image{
+         position: relative;
+         &:after{
+            content: '';
+            @include size(100%, 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+         }
+      }
+      .box-content{
+         position: absolute;
+         z-index: 9;
+         text-align: center;
+         padding: 20px;
+         bottom: 30px;
+         left: 0;
+         @include size(100%, auto);
+         padding-top: 30px;  
+         .sub-title{
+            font-size: 32px;
+            color: $theme-color;
+            font-family: $font-third;
+            line-height: 1;
+            position: relative;
+            bottom: -35px;
+            margin-bottom: 0;
+            @include transition(all 0.35s);
+         }
+         .title{
+            font-size: 24px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            color: $white;
+            line-height: 30px;
+            @include transition(all 0.35s);
+            position: relative;
+            bottom: -30px;
+            margin-bottom: 10px;
+            a{
+               color: $white;
+               &:hover{
+                  color: $theme-color;
+               }
+            }
+         }
+         .desc{
+            padding: 0;
+            color: $white;
+            overflow: hidden;
+            @include transition(all 0.35s);
+            visibility: hidden;
+            height: 0;
+            bottom: -30px;
+            position: relative;
+
+         }
+         .ajax-action{
+            margin-top: 22px;
+            a{
+               color: $white;
+               &:hover{
+                  color: $theme-color;
+               }
+            }
+         }
+      }
+      &:hover{
+         .sub-title{
+            bottom: 0;
+         }
+         .title{
+            bottom: 0;
+         }
+         .desc{
+            visibility: visible;
+            bottom: 0;
+            height: auto;
+         }
+      }
+   }
+}

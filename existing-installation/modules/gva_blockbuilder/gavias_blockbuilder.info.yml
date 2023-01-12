@@ -1,0 +1,9 @@
+name: Gavias Block Builder v2
+type: module
+description: Gavias Block Builder module.
+dependencies:
+package: gavias
+version: '9.x'
+core_version_requirement: ^8.8 || ^9
+project: 'gavias_blockbuilder'
+datestamp: 1439548441

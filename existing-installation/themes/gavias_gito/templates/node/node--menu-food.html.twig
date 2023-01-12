@@ -1,0 +1,110 @@
+{%
+  set classes = [
+    'node',
+    'node-detail',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<!-- Start Display article for teaser page -->
+{% if view_mode == 'teaser' %}
+  
+  <div class="menu-food-block teaser-1">      
+    {{ content.field_image}}
+    <div class="block-content">
+      <div class="image">
+        {{content.field_menu_image}}
+        {% if link_contact_menu_food %}
+          <div class="contact-link-inner"> 
+            <a class="use-ajax contact-link" data-dialog-options="{&quot;width&quot;:800,&quot;dialogClass&quot;:&quot;webform-modal&quot;}" data-dialog-type="modal" href="{{link_contact_menu_food}}?title={{ node.title.value|e('url') }}">
+              <i class="gv-icon-226"></i>&nbsp;&nbsp;{{'Contact'|t}}
+            </a>
+          </div>  
+        {% endif %}
+      </div>  
+      <div class="content-inner">
+        <div class="title">{{ label }}</div>   
+        {% if content.field_menu_sub %} 
+          <div class="sub-menu-food">{{content.field_menu_sub|raw}}</div>    
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% elseif view_mode == 'teaser_2' %}
+
+  <div class="menu-food-block teaser-2">      
+    {{ content.field_image}}
+    <div class="block-content">
+      <div class="image">{{content.field_menu_image}}
+        {% if link_contact_menu_food %}
+          <div class="contact-link-inner"> 
+            <a class="use-ajax contact-link" data-dialog-options="{&quot;width&quot;:800,&quot;dialogClass&quot;:&quot;webform-modal&quot;}" data-dialog-type="modal" href="{{link_contact_menu_food}}?title={{ node.title.value|e('url') }}">
+              <i class="gv-icon-226"></i>&nbsp;&nbsp;{{'Contact'|t}}
+            </a>
+          </div>  
+        {% endif %}
+      </div>  
+      <div class="content-inner">
+        <div class="title">{{ label }}</div>
+        {% if content.field_menu_sub %} 
+          <div class="sub-menu-food">{{content.field_menu_sub|raw}}</div>    
+        {% endif %}   
+        {% if node.field_menu_price.value %} 
+          <div class="menu-food-price">{{node.field_menu_price.value}}</div>    
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% else %}
+<!-- Start Display article for detail page -->
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="post-block">
+    <div class="post-content">
+      <header>
+        <div class="widget gsc-heading align-left style-1 small text-dark">
+          <h2 class="title"><span>{{ label }}</span></h2>            
+          <div class="line"><span class="one"></span><span class="second"></span><span class="three"></span></div>
+        </div>    
+      </header>
+      {% if display_submitted %}
+        <div class="node__meta hidden">
+          {{ author_picture }}
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </span>
+          {{ metadata }}
+        </div>
+      {% endif %}
+
+      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+        {{ content|without('comment') }}
+      </div>
+      
+      {% if gva_content_shortcode %}
+        <div class="gavias-content-blockbuilder">{{ gva_content_shortcode|raw }}</div>
+      {% endif %}
+
+      {% if content.comment %}
+        <div id="node-single-comment">
+          <div id="comments">
+            {{ content.comment }}
+          </div>  
+        </div>
+      {% endif %}  
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- End Display article for detail page -->
+{% endif %}

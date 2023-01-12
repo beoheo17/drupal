@@ -1,0 +1,37 @@
+name: 'Features Gito'
+description: 'Features Gito - Import content type, field, view ... for Gito theme.'
+type: module
+dependencies:
+  - block
+  - block_visibility_groups
+  - comment
+  - contact
+  - ctools
+  - datetime
+  - field
+  - field_collection
+  - file
+  - filter
+  - gavias_view
+  - gavias_views_magazine
+  - gaviasthemer
+  - image
+  - image_url_formatter
+  - imce
+  - menu_ui
+  - node
+  - options
+  - path
+  - pathauto
+  - rdf
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - views_infinite_scroll
+  - webform
+  - config_update
+  - features
+version: '2.0.0'
+core_version_requirement: ^8.8 || ^9

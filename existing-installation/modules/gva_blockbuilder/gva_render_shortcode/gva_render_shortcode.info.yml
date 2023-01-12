@@ -1,0 +1,7 @@
+name: Gva Render Shortcode
+type: module
+description: Gavias Block Builder module.
+package: gavias
+version: '9.x'
+core_version_requirement: ^8.8 || ^9
+project: 'gva_render_shortcode'

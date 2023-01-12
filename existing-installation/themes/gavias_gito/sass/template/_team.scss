@@ -1,0 +1,80 @@
+.team-block{
+  text-align: center;
+  .team-image{
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: #101b2b;
+      @include opacity(0);
+      z-index: 1;
+      @include transition(all 0.35s);
+    }
+    .socials-team{
+      position: absolute;
+      right: 15px;
+      top: 20px;
+      z-index: 9;
+      width: 20px;
+      height: auto;
+      @include opacity(0);
+      @include transition(all 0.35s); 
+      text-align: center;
+      a{
+        text-align: center;
+        color: $white;
+        font-size: 18px;
+        &:hover, &:focus, &:active{
+          color: $theme-color;
+        }
+      }
+    }
+  }
+  .team-name{
+    font-size: 18px;
+    font-weight: 400;
+    margin: 20px 0 10px;
+    line-height: 24px;
+    font-family: $font-second;
+    font-weight: 600;
+  }
+  .team-job{
+    font-size: 12px;
+    color: #999999;
+  }
+  .team-body{
+    color: #242527;
+    line-height: 24px;
+  }
+  &:hover{
+    .team-image{
+      &:after{
+        @include opacity(0.75);
+      }
+    }
+    .socials-team{
+      @include opacity(1);
+    }
+  }
+}
+.team-list{
+  .team-block{
+    .team-image{
+      width: 35%;
+      float: left;
+    }
+    .team-content{
+      padding-left: 30px;
+      width: 65%;
+      float: left;
+      .team-body{
+        display: block!important;
+        visibility: visible!important;
+        padding: 10px 0;
+      }
+    }
+  }
+}

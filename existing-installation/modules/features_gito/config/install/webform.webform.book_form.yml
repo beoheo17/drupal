@@ -1,0 +1,114 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 1
+template: false
+id: book_form
+title: 'Book Form'
+description: ''
+category: ''
+elements: "name:\n  '#type': textfield\n  '#title': Name\n  '#title_display': invisible\n  '#placeholder': 'Your name'\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#title_display': invisible\n  '#placeholder': 'Your Email'\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\n  '#required': true\nphone:\n  '#type': textfield\n  '#title': Phone\n  '#title_display': invisible\n  '#placeholder': 'Your phone'\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\ndate:\n  '#type': date\n  '#title': Date\n  '#default_value': now\n  '#title_display': invisible\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\n  '#datepicker': true\ntime:\n  '#type': webform_time\n  '#title': Time\n  '#default_value': '17:30'\n  '#title_display': invisible\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\n  '#timepicker': true\n  '#step': '1800'\nbook_guests:\n  '#type': textfield\n  '#title': 'Book Guests'\n  '#title_display': invisible\n  '#placeholder': 'Book Guests*'\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-6 col-xs-12'\n  '#required': true\n  '#required_error': 'Please enter Book Guests'\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#title_display': invisible\n  '#placeholder': Message\n  '#wrapper_attributes':\n    class:\n      - 'col-sm-12 col-xs-12'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  purge: none
+  purge_days: null
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

@@ -1,0 +1,144 @@
+.service-block{
+   margin-bottom: 30px;
+   @include clearfix();
+   background: $white;
+   .service-images{
+      position: relative;
+      &:after{
+         content: '';
+         @include size(100%, 100%);
+         background: rgba(0, 0, 0, 0.6);
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 9;
+         @include transition(all 0.35s);
+         @include opacity(0);
+      }
+      .zoomGallery{
+         position: absolute;
+         @include size(36px, 36px);
+         top: 50%;
+         left: 50%;
+         margin-top: -15px;
+         margin-left: -15px;
+         z-index: 11;
+         text-align: center;
+         @include border-radius(50%);
+         background: $white;
+         line-height: 36px;
+         @include opacity(0);
+      }
+      &:hover{
+         .zoomGallery{
+            @include opacity(1);
+         }
+         &:after{
+            @include opacity(1);
+         }
+      }
+   }
+   .service-content{
+      padding: 8px 25px 25px;
+      position: relative;
+      border: 1px solid $border-color;
+      border-top: 0;
+      &:after{
+         content: '';
+         background: url('#{$base-theme-image-path}/line.png') repeat-x center bottom $nocolor;
+         position: absolute;
+         bottom: 100%;
+         left: 0;
+         width: 100%;
+         height: 10px;
+         z-index: 1;
+      }
+      .title{
+         margin-bottom: 8px;
+      }
+   }
+   .service-readmore, .service-contact{
+      a{
+         text-transform: uppercase;
+         color: $black;
+         font-size: 12px;
+         font-weight: 700;
+         font-family: $font-second;
+         @include transition(all 0.35s);
+         &:hover, &:focus{
+            letter-spacing: 1px;
+         }
+      }
+   }
+   .service-contact{
+      float: left;
+      i{
+         font-size: 16px;
+      }
+   }
+   .service-readmore{
+      float: right;
+   }
+}
+
+.services-tab{
+   .tab-carousel-nav{
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      .link-service{
+         font-weight: 600;
+         display: block;
+         text-align: center;
+         text-transform: uppercase;
+         padding: 10px;
+         margin: 5px 15px 15px;
+         @include box-shadow(0 1px 6px rgba(0, 0, 0, 0.1));
+         background: $white;
+         &:hover{
+            cursor: pointer;
+            border-color: $theme-color;
+         }
+      }
+      .slick-center{
+         .link-service{
+            background: $theme-color;
+            color: $white;
+         }
+      }
+   }
+   .tab-lists-content{
+      .service-block{
+         .service-images{
+            width: 45%;
+            float: left;
+         }
+         .service-content{
+            width: 55%;
+            float: left;
+            padding-left: 30px;
+         }
+      }
+   }
+}
+
+.services-1{
+   .service-block{
+      background: $white;
+      .service-content{
+         padding: 0 20px 20px;
+         .title{
+            h3{
+               margin: 18px 0 5px;
+            }
+         }
+         .desc{
+            max-height: 100px;
+            overflow: hidden;
+            @include box-shadow(0px 6px 10px 0px rgba(2255, 255, 255, 0.5));
+         }
+         .readmore{
+            margin-top: 10px;
+         }
+      }
+   }
+}

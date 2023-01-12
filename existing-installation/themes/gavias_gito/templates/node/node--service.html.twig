@@ -1,0 +1,85 @@
+{%
+  set classes = [
+    'node',
+    'node-detail',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<!-- Start Display article for teaser page -->
+{% if teaser == true %} 
+  <div class="service-block grid">      
+    <div class="service-images lightGallery">{{ content.field_service_images }}</div>
+    <div class="service-content">
+       <div class="content-inner">
+          <h3 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+          <div class="desc">{{ content.body }}</div>
+          <div class="service-action clearfix">
+            <div class="service-readmore"><a href="{{ url }}">{{'Read more'|t}}&nbsp;&nbsp;<i class="gv-icon-165"></i></a></div>
+            {% if link_contact_form_service %}
+              <div class="service-contact">
+                <a class="use-ajax" data-dialog-options="{&quot;width&quot;:800,&quot;dialogClass&quot;:&quot;webform-modal&quot;}" data-dialog-type="modal" href="{{link_contact_form_service}}?title={{ node.title.value|e('url') }}">
+                  <i class="gv-icon-226"></i>&nbsp;&nbsp;{{'Contact'|t}}
+                </a>
+              </div>
+            {% endif %}
+          </div>  
+       </div>    
+    </div>
+  </div>
+
+<!-- End Display article for teaser page -->
+
+{% else %}
+<!-- Start Display article for detail page -->
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="service-block grid">
+      
+    <div class="service-images-inner">
+      {{ content.field_service_images }}
+    </div>
+
+    <div class="post-content">
+      {{ title_prefix }}
+         <h1{{ title_attributes.addClass('post-title') }}>{{ label }}</h1>
+      {{ title_suffix }}         
+      <div class="post-meta">
+        <span class="post-created"> {{date }} </span> /
+        <span class="post-comment"> 
+          <a href="{{url}}/#comments">{{ comment_count }} Comments</a>
+        </span>
+      </div>
+      
+      {% if display_submitted %}
+        <div class="node__meta hidden">
+          {{ author_picture }}
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </span>
+          {{ metadata }}
+        </div>
+      {% endif %}
+
+      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+        {{ content|without('field_service_images', 'comment') }}
+      </div>
+      <div id="node-single-comment">
+        <div id="comments">
+          {{ content.comment }}
+        </div>  
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- End Display article for detail page -->
+{% endif %}

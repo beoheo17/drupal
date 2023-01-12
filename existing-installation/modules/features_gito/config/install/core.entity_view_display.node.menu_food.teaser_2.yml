@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_2
+    - field.field.node.menu_food.body
+    - field.field.node.menu_food.field_menu_category
+    - field.field.node.menu_food.field_menu_image
+    - field.field.node.menu_food.field_menu_price
+    - field.field.node.menu_food.field_menu_sub
+    - image.style.medium
+    - node.type.menu_food
+  module:
+    - image
+    - text
+    - user
+id: node.menu_food.teaser_2
+targetEntityType: node
+bundle: menu_food
+mode: teaser_2
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_menu_category:
+    weight: 102
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_menu_image:
+    weight: 103
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_menu_price:
+    weight: 104
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_menu_sub:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

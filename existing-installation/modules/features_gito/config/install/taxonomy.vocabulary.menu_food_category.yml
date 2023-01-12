@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Menu Food Category'
+vid: menu_food_category
+description: ''
+hierarchy: 0
+weight: 0

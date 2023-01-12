@@ -1,0 +1,5 @@
+<?php
+
+function gavias_webform_element_update_projects_alter(&$projects){
+   unset($projects['gavias_webform_element']);
+}
